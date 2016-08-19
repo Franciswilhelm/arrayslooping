@@ -1,14 +1,10 @@
-function count(num) {
-  var s = "";
-  for(var i = 1; i <= num; i++) {
-    s += i;
-
-    if (i < (num)) {
-      s += ', ';
-    }
-  }
-  return s;
-}
+var numbers = [];
+var count = function(numberInput) {
+  for (var i = 1; i <= numbers; i++) {
+    numbers.push(i);
+};
+  return numbers;
+};
 
 
 
@@ -18,9 +14,10 @@ function count(num) {
 
 $(document).ready(function() {
   $("form#number").submit(function(event) {
-    var numberInput = $("input#number").val();
-    event.preventDefault();
+    var numberInput = parseInt$("input#number").val();
 
-     $("#output").show();
+
+     $("div#output").show();
+     event.preventDefault();
   });
 });
