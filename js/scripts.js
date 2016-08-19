@@ -1,9 +1,19 @@
 var numbers = [];
-var count = function(numberInput) {
-  for (var i = 1; i <= numbers; i++) {
-    numbers.push(i);
-};
-  return numbers;
+var result = "";
+function pingPong (userDigit) {
+  for (var i = 1; i <= userDigit; i++) {
+    if (i % 15 === 0) {
+      numbers.append("pingpong");
+    } else if (i % 3 === 0) {
+      numbers.append("ping");
+    } else if (i % 5 === 0) {
+      numbers.append("pong");
+    } else {
+      numbers.push(i);
+    };
+  };
+  result = parseInt(numbers.join(', '));
+  return result;
 };
 
 
@@ -13,11 +23,10 @@ var count = function(numberInput) {
 
 
 $(document).ready(function() {
-  $("form#number").submit(function(event) {
-    var numberInput = parseInt$("input#number").val();
+  $("form#counter").submit(function(event) {
+    var userDigit = parseInt$("input#userDigit").val();
 
-
-     $("div#output").show();
-     event.preventDefault();
+    $("#output").append(pingPong(userDigit));
+    event.preventDefault();
   });
 });
