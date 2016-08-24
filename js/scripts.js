@@ -11,12 +11,8 @@ var pingPong = function(userDigit) {
       numbers.push(i);
     };
   };
-  // result = parseInt(numbers.join(', '));
   return numbers;
 };
-
-
-
 
 $(document).ready(function() {
   $("form#counter").submit(function(event) {
@@ -26,7 +22,6 @@ $(document).ready(function() {
       $("#output").append("<li>" + i + "</li>");
     });
     $("#show-result").show();
-    // $("#output").append(pingPong(userDigit));
     event.preventDefault();
   });
 });
